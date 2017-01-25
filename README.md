@@ -3,7 +3,9 @@ An IoT Chatbot to access the peripherals of the GrovePi starter kit
 
 # Setting up the Raspberry Pi
 
-## 1. Download current raspbian and install on SD Card (see tutorial from raspbian install on your OS)
+## 1. Download current raspbian and install on SD Card
+- follow the tutorial at
+https://www.raspberrypi.org/documentation/installation/installing-images/
 
 ## 2. Configure Raspbian with
 - camera on
@@ -68,32 +70,32 @@ An IoT Chatbot to access the peripherals of the GrovePi starter kit
 - npm install node-red-node-watson
 
 ## 9. Install grovepi+
-http://www.dexterindustries.com/GrovePi/get-started-with-the-grovepi/setting-software/
-cd ~
-mkdir Git
-cd Git
-git clone https://github.com/DexterInd/GrovePi
-cd GrovePi/Script
-sudo chmod +x install.sh
-sudo ./install.sh
+- http://www.dexterindustries.com/GrovePi/get-started-with-the-grovepi/setting-- software/
+- cd ~
+- mkdir Git
+- cd Git
+- git clone https://github.com/DexterInd/GrovePi
+- cd GrovePi/Script
+- sudo chmod +x install.sh
+- sudo ./install.sh
 
 ### Check grovepi+ board
-sudo i2cdetect -y 1
--- if brings 04 - means that grovepi+ board has been detected
+- sudo i2cdetect -y 1
+if it returns 04, it means that grovepi+ board has been detected
 
 ### test green light (plug into D4 the green light)
-### see also http://www.dexterindustries.com/GrovePi/engineering/python-library-documentation/
-cd GrovePi/Software/Python
-python grove_led_blink.py
+- see also http://www.dexterindustries.com/GrovePi/engineering/python-library-documentation/
+- cd GrovePi/Software/Python
+- python grove_led_blink.py
 
 ### Additional Setup - Boot with LCD (placed on I2C-1) & IPAdresse on Display
-sudo apt-get install python-netifaces
-cd ~/Git
-git clone https://github.com/O-Hahn/RaspiTools.git
+- sudo apt-get install python-netifaces
+- cd ~/Git
+- git clone https://github.com/O-Hahn/RaspiTools.git
 
 ## 10. Systemctl - Startup Script
 ### Bring IP Adress on the LCD Display
-sudo nano /lib/systemd/system/myinit.service
+- sudo nano /lib/systemd/system/myinit.service
 
 ### Insert followin into the editor
 [Unit]
